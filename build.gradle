@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group 'uk.co.renbinden'
@@ -16,4 +17,35 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+def repoUserName = ""
+def repoPassword = ""
+def propertiesFile = new File("repo.properties")
+if (propertiesFile.exists()) {
+    def properties = new Properties()
+    properties.load(new FileInputStream(propertiesFile))
+    repoUserName = properties.getProperty("repo-username")
+    repoPassword = properties.getProperty("repo-password")
+}
+
+publishing {
+    repositories {
+        maven {
+            credentials {
+                username repoUserName
+                password repoPassword
+            }
+            url "https://repo.rpkit.com/repository/maven-releases/"
+        }
+    }
+    publications {
+        maven(MavenPublication) { publication ->
+            version = version
+            artifactId = name
+            groupId = group
+
+            from components.java
+        }
+    }
 }
