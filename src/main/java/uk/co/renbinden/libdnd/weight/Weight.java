@@ -29,7 +29,7 @@ public final class Weight implements Comparable<Weight> {
     }
 
     @Override
-    public int compareTo(@NotNull Weight weight) {
+    public int compareTo(Weight weight) {
         return (int) round((getValue() / getUnit().getScaleFactor()) - (weight.getValue() / weight.getUnit().getScaleFactor()));
     }
 
