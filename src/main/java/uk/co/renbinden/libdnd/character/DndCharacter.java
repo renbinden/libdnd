@@ -4,7 +4,6 @@ import uk.co.renbinden.libdnd.ability.Ability;
 import uk.co.renbinden.libdnd.ability.AbilityCheckResult;
 import uk.co.renbinden.libdnd.alignment.Alignment;
 import uk.co.renbinden.libdnd.background.Background;
-import uk.co.renbinden.libdnd.choice.Choice;
 import uk.co.renbinden.libdnd.clazz.Clazz;
 import uk.co.renbinden.libdnd.experience.ExperienceLookupTable;
 import uk.co.renbinden.libdnd.item.armor.ArmorType;
@@ -41,7 +40,6 @@ public class DndCharacter {
     private int tempHp;
     private boolean isInspired;
     private List<Proficiency> proficiencies;
-    private Map<Choice<?>, Object> decisions;
 
     public DndCharacter(String name, int age, Race race, Clazz firstClass, int experience, Background background, Alignment alignment, int hp, int tempHp) {
         this.name = name;
@@ -249,14 +247,6 @@ public class DndCharacter {
 
     public AbilityCheckResult doAbilityCheck(Ability ability, int requirement) {
         return doAbilityCheck(ability, 0, requirement);
-    }
-
-    public <T> T getDecision(Choice<T> choice) {
-        return (T) decisions.get(choice);
-    }
-
-    public <T> void setDecision(Choice<T> choice, T option) {
-        decisions.put(choice, option);
     }
 
 }
