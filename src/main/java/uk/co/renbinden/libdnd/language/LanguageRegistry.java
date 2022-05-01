@@ -34,6 +34,7 @@ public final class LanguageRegistry implements Registry<Language> {
                     GNOMISH,
                     GOBLIN,
                     HALFLING,
+                    ORC,
                     ABYSSAL,
                     CELESTIAL,
                     DEEP_SPEECH,
