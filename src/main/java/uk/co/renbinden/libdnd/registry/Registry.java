@@ -7,4 +7,6 @@ public interface Registry<T> {
 
     T getByIdentifier(String identifier);
     List<T> getAllMatching(Predicate<T> predicate);
+    List<T> getAll();
+
 }

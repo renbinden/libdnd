@@ -431,4 +431,8 @@ public final class ItemRegistry implements Registry<ItemType> {
                 .toList();
     }
 
+    @Override
+    public List<ItemType> getAll() {
+        return itemTypes.values().stream().toList();
+    }
 }

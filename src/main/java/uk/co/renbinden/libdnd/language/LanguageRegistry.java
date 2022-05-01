@@ -65,4 +65,9 @@ public final class LanguageRegistry implements Registry<Language> {
     public List<Language> getAllMatching(Predicate<Language> predicate) {
         return languages.values().stream().filter(predicate).toList();
     }
+
+    @Override
+    public List<Language> getAll() {
+        return languages.values().stream().toList();
+    }
 }

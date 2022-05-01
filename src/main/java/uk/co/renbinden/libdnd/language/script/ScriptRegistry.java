@@ -56,4 +56,9 @@ public final class ScriptRegistry implements Registry<Script> {
     public List<Script> getAllMatching(Predicate<Script> predicate) {
         return scripts.values().stream().filter(predicate).toList();
     }
+
+    @Override
+    public List<Script> getAll() {
+        return scripts.values().stream().toList();
+    }
 }

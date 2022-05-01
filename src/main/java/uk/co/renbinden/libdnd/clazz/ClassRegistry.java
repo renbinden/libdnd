@@ -62,4 +62,9 @@ public final class ClassRegistry implements Registry<Clazz> {
     public List<Clazz> getAllMatching(Predicate<Clazz> predicate) {
         return classes.values().stream().filter(predicate).toList();
     }
+
+    @Override
+    public List<Clazz> getAll() {
+        return classes.values().stream().toList();
+    }
 }

@@ -92,7 +92,7 @@ public class DndCharacter {
     }
 
     public int getLevel() {
-        return ExperienceLookupTable.getLevelAtExperience(getExperience());
+        return ExperienceLookupTable.DEFAULT.getLevelAtExperience(getExperience());
     }
 
     public void setClassLevel(Clazz clazz, int level) {
