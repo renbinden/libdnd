@@ -14,7 +14,7 @@ public final class LanguageRegistry implements Registry<Language> {
 
     private final Map<String, Language> languages;
 
-    public LanguageRegistry(Map<String, Language> languages) {
+    private LanguageRegistry(Map<String, Language> languages) {
         this.languages = languages;
     }
 

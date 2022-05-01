@@ -20,7 +20,7 @@ public final class ItemRegistry implements Registry<ItemType> {
 
     private final Map<String, ItemType> itemTypes;
 
-    public ItemRegistry(Map<String, ItemType> itemTypes) {
+    private ItemRegistry(Map<String, ItemType> itemTypes) {
         this.itemTypes = itemTypes;
     }
 

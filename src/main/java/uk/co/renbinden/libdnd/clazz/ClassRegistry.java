@@ -14,7 +14,7 @@ public final class ClassRegistry implements Registry<Clazz> {
 
     private final Map<String, Clazz> classes;
 
-    public ClassRegistry(Map<String, Clazz> classes) {
+    private ClassRegistry(Map<String, Clazz> classes) {
         this.classes = classes;
     }
 
