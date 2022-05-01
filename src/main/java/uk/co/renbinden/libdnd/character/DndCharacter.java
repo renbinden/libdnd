@@ -15,10 +15,7 @@ import uk.co.renbinden.libdnd.roll.Roll;
 import uk.co.renbinden.libdnd.roll.RollPartResult;
 import uk.co.renbinden.libdnd.skill.Skill;
 
-import java.util.EnumMap;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static uk.co.renbinden.libdnd.ability.Ability.CONSTITUTION;
 import static uk.co.renbinden.libdnd.ability.AbilityModifierLookupTable.lookupModifier;
@@ -39,7 +36,7 @@ public class DndCharacter {
     private int hp;
     private int tempHp;
     private boolean isInspired;
-    private List<Proficiency> proficiencies;
+    private final List<Proficiency> proficiencies;
 
     public DndCharacter(String name, int age, Race race, Clazz firstClass, int experience, Background background, Alignment alignment, int hp, int tempHp) {
         this.name = name;
@@ -51,6 +48,7 @@ public class DndCharacter {
         this.alignment = alignment;
         this.hp = hp;
         this.tempHp = tempHp;
+        this.proficiencies = new ArrayList<>();
     }
 
     public String getName() {
