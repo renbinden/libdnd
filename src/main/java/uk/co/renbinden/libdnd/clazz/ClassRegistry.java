@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 import static uk.co.renbinden.libdnd.clazz.phb.PhbClass.*;
 
-public class ClassRegistry implements Registry<Clazz> {
+public final class ClassRegistry implements Registry<Clazz> {
 
     private final Map<String, Clazz> classes;
 
