@@ -24,7 +24,7 @@ public final class ItemRegistry implements Registry<ItemType> {
         this.itemTypes = itemTypes;
     }
 
-    public static class Builder {
+    public static final class Builder {
         private final List<ItemType> itemTypes;
 
         public Builder() {

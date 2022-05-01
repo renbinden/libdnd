@@ -18,7 +18,7 @@ public final class ClassRegistry implements Registry<Clazz> {
         this.classes = classes;
     }
 
-    public static class Builder {
+    public static final class Builder {
         private final List<Clazz> classes;
 
         public Builder() {
