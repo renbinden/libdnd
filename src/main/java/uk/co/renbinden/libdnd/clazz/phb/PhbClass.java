@@ -10,6 +10,7 @@ import static uk.co.renbinden.libdnd.ability.Ability.*;
 public final class PhbClass {
 
     public static final Clazz BARBARIAN = new Clazz(
+            "barbarian",
             "Barbarian",
             new Roll(new Die(12)),
             STRENGTH,
@@ -18,6 +19,7 @@ public final class PhbClass {
             new MulticlassingRequirement.AbilityRequirement(STRENGTH, 13)
     );
     public static final Clazz BARD = new Clazz(
+            "bard",
             "Bard",
             new Roll(new Die(8)),
             CHARISMA,
@@ -26,6 +28,7 @@ public final class PhbClass {
             new MulticlassingRequirement.AbilityRequirement(CHARISMA, 13)
     );
     public static final Clazz CLERIC = new Clazz(
+            "cleric",
             "Cleric",
             new Roll(new Die(8)),
             WISDOM,
@@ -34,6 +37,7 @@ public final class PhbClass {
             new MulticlassingRequirement.AbilityRequirement(WISDOM, 13)
     );
     public static final Clazz DRUID = new Clazz(
+            "druid",
             "Druid",
             new Roll(new Die(8)),
             WISDOM,
@@ -42,6 +46,7 @@ public final class PhbClass {
             new MulticlassingRequirement.AbilityRequirement(WISDOM, 13)
     );
     public static final Clazz FIGHTER = new Clazz(
+            "fighter",
             "Fighter",
             new Roll(new Die(10)),
             STRENGTH, // or DEXTERITY
@@ -53,6 +58,7 @@ public final class PhbClass {
             )
     );
     public static final Clazz MONK = new Clazz(
+            "monk",
             "Monk",
             new Roll(new Die(8)),
             DEXTERITY,
@@ -64,6 +70,7 @@ public final class PhbClass {
             )
     );
     public static final Clazz PALADIN = new Clazz(
+            "paladin",
             "Paladin",
             new Roll(new Die(10)),
             STRENGTH,
@@ -75,6 +82,7 @@ public final class PhbClass {
             )
     );
     public static final Clazz RANGER = new Clazz(
+            "ranger",
             "Ranger",
             new Roll(new Die(10)),
             DEXTERITY, // and WISDOM
@@ -86,6 +94,7 @@ public final class PhbClass {
             )
     );
     public static final Clazz ROGUE = new Clazz(
+            "rogue",
             "Rogue",
             new Roll(new Die(8)),
             DEXTERITY,
@@ -94,6 +103,7 @@ public final class PhbClass {
             new MulticlassingRequirement.AbilityRequirement(DEXTERITY, 13)
     );
     public static final Clazz SORCERER = new Clazz(
+            "sorcerer",
             "Sorcerer",
             new Roll(new Die(6)),
             CHARISMA,
@@ -102,6 +112,7 @@ public final class PhbClass {
             new MulticlassingRequirement.AbilityRequirement(CHARISMA, 13)
     );
     public static final Clazz WARLOCK = new Clazz(
+            "warlock",
             "Warlock",
             new Roll(new Die(8)),
             CHARISMA,
@@ -110,6 +121,7 @@ public final class PhbClass {
             new MulticlassingRequirement.AbilityRequirement(CHARISMA, 13)
     );
     public static final Clazz WIZARD = new Clazz(
+            "wizard",
             "Wizard",
             new Roll(new Die(6)),
             INTELLIGENCE,

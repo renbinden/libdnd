@@ -1,5 +1,8 @@
 package uk.co.renbinden.libdnd.item;
 
+import uk.co.renbinden.libdnd.registry.Registry;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
@@ -13,16 +16,20 @@ import static uk.co.renbinden.libdnd.item.tradegood.phb.PhbTradeGoodType.*;
 import static uk.co.renbinden.libdnd.item.trinket.phb.PhbTrinketType.*;
 import static uk.co.renbinden.libdnd.item.weapon.phb.PhbWeaponType.*;
 
-public final class ItemRegistry {
+public final class ItemRegistry implements Registry<ItemType> {
 
     private final Map<String, ItemType> itemTypes;
 
-    public ItemRegistry(Map<String, ItemType> itemTypes) {
+    private ItemRegistry(Map<String, ItemType> itemTypes) {
         this.itemTypes = itemTypes;
     }
 
-    public static class Builder {
-        private List<ItemType> itemTypes;
+    public static final class Builder {
+        private final List<ItemType> itemTypes;
+
+        public Builder() {
+            this.itemTypes = new ArrayList<>();
+        }
 
         public Builder addPhbItems() {
             itemTypes.addAll(List.of(
@@ -424,4 +431,8 @@ public final class ItemRegistry {
                 .toList();
     }
 
+    @Override
+    public List<ItemType> getAll() {
+        return itemTypes.values().stream().toList();
+    }
 }

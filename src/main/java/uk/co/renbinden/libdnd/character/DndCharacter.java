@@ -4,7 +4,6 @@ import uk.co.renbinden.libdnd.ability.Ability;
 import uk.co.renbinden.libdnd.ability.AbilityCheckResult;
 import uk.co.renbinden.libdnd.alignment.Alignment;
 import uk.co.renbinden.libdnd.background.Background;
-import uk.co.renbinden.libdnd.choice.Choice;
 import uk.co.renbinden.libdnd.clazz.Clazz;
 import uk.co.renbinden.libdnd.experience.ExperienceLookupTable;
 import uk.co.renbinden.libdnd.item.armor.ArmorType;
@@ -16,10 +15,7 @@ import uk.co.renbinden.libdnd.roll.Roll;
 import uk.co.renbinden.libdnd.roll.RollPartResult;
 import uk.co.renbinden.libdnd.skill.Skill;
 
-import java.util.EnumMap;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static uk.co.renbinden.libdnd.ability.Ability.CONSTITUTION;
 import static uk.co.renbinden.libdnd.ability.AbilityModifierLookupTable.lookupModifier;
@@ -40,8 +36,7 @@ public class DndCharacter {
     private int hp;
     private int tempHp;
     private boolean isInspired;
-    private List<Proficiency> proficiencies;
-    private Map<Choice<?>, Object> decisions;
+    private final List<Proficiency> proficiencies;
 
     public DndCharacter(String name, int age, Race race, Clazz firstClass, int experience, Background background, Alignment alignment, int hp, int tempHp) {
         this.name = name;
@@ -53,6 +48,7 @@ public class DndCharacter {
         this.alignment = alignment;
         this.hp = hp;
         this.tempHp = tempHp;
+        this.proficiencies = new ArrayList<>();
     }
 
     public String getName() {
@@ -96,7 +92,7 @@ public class DndCharacter {
     }
 
     public int getLevel() {
-        return ExperienceLookupTable.getLevelAtExperience(getExperience());
+        return ExperienceLookupTable.DEFAULT.getLevelAtExperience(getExperience());
     }
 
     public void setClassLevel(Clazz clazz, int level) {
@@ -249,14 +245,6 @@ public class DndCharacter {
 
     public AbilityCheckResult doAbilityCheck(Ability ability, int requirement) {
         return doAbilityCheck(ability, 0, requirement);
-    }
-
-    public <T> T getDecision(Choice<T> choice) {
-        return (T) decisions.get(choice);
-    }
-
-    public <T> void setDecision(Choice<T> choice, T option) {
-        decisions.put(choice, option);
     }
 
 }

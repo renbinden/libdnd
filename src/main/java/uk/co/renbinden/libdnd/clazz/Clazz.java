@@ -5,6 +5,7 @@ import uk.co.renbinden.libdnd.roll.Roll;
 
 public final class Clazz {
 
+    private final String identifier;
     private final String name;
     private final Roll hitDie;
     private final Ability primaryAbility;
@@ -12,18 +13,26 @@ public final class Clazz {
     private final int levelHp;
     private final MulticlassingRequirement multiclassingRequirement;
 
-    public Clazz(String name,
-                 Roll hitDie,
-                 Ability primaryAbility,
-                 int baseHp,
-                 int levelHp,
-                 MulticlassingRequirement multiclassingRequirement) {
+    public Clazz(
+            String identifier,
+            String name,
+            Roll hitDie,
+            Ability primaryAbility,
+            int baseHp,
+            int levelHp,
+            MulticlassingRequirement multiclassingRequirement
+    ) {
+        this.identifier = identifier;
         this.name = name;
         this.hitDie = hitDie;
         this.primaryAbility = primaryAbility;
         this.baseHp = baseHp;
         this.levelHp = levelHp;
         this.multiclassingRequirement = multiclassingRequirement;
+    }
+
+    public String getIdentifier() {
+        return identifier;
     }
 
     public String getName() {
