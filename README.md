@@ -11,6 +11,6 @@ repositories {
 }
 
 dependencies {
-    implementation "uk.co.renbinden:libdnd:0.3.0"
+    implementation "uk.co.renbinden:libdnd:0.4.0"
 }
 ```
